@@ -1,0 +1,36 @@
+{
+    "name": "demogen",
+    "description": "Clientside JS Library Demo Generator",
+    "tags": ["generator", "demo"],
+    "author": "Damon Oehlman <damon.oehlman@sidelab.com>",
+    "version": "0.0.4",
+    "main": "index",
+    "bin": { "demogen": "./bin/demogen" },
+    
+    "engines": { "node": "0.4.x || 0.5.x" },
+    
+    "dependencies": {
+        "async": "0.1.x",
+        "commander": "0.1.x",
+        "jade": "0.15.x",
+        "out": "0.x.x",
+        "ncp": "0.1.x",
+        "underscore": "1.x.x"
+    },
+    
+    "devDependencies": {
+        "vows": "0.5.x"
+    },
+    
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/DamonOehlman/demogen.git"
+    },
+    
+    "bugs": {
+        "web": "http://github.com/DamonOehlman/demogen/issues"
+    },
+
+    "contributors": [
+    ]
+}
