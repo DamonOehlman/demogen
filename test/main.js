@@ -20,7 +20,7 @@ builder.on('ready', function() {
             
             'deck file created': function(err) {
                 assert.ok(! err);
-                assert.ok(path.existsSync(path.join(testPath, 'snippets')), 'demo snippets do not exist');
+                assert.ok(path.existsSync(path.join(testPath, '_sources')), 'demo snippets do not exist');
             }
         }
     });
