@@ -1,6 +1,6 @@
 # demogen
 
-Demogen is the "write your JS library demo code once" solution.  
+Demogen is the ___write your JS library demo code once___ solution.  
 
 ## Why use demogen?
 
