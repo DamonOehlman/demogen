@@ -34,6 +34,10 @@
   <script src="_demogen/js/ace/theme-{{ theme }}.js"></script>
   <script src="_demogen/js/ace/mode-{{ mode }}.js"></script>
   <script src="_demogen/js/runner.js"></script>
+  <script>
+  var settings = {{{ settings }}};
+  </script>
+  {{#includes}}<script src="{{ this }}"></script>{{/includes}}
   <script defer="defer">{{{ code }}}</script>
 </body>
 </html>
