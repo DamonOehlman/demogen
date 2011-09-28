@@ -8,11 +8,31 @@ It's annoying to wrap demos for your library in the same boilerplate HTML everyt
 
 ## Getting Started
 
-To be completed.
+First, install using npm:
+
+```
+npm install demogen -g
+```
+
+If all has gone well, then you will have a `demogen` executable available to you in your path.
 
 ### Scaffolding a Project
 
-To be completed
+You can scaffold a new project by changing to the directory you want to create the project in and running:
+
+```
+demogen create
+```
+
+### Building the Demos
+
+Demogen generates a number of static HTML files from the assets in the `_sources` directory.  To generate those files, simply run either `demogen` with no additional parameters or:
+
+```
+demogen build
+```
+
+Once this is done you will have a number of .html files in the current folder for demos that have been defined in the `_sources` directory.  Feel free to give it a go with a newly scaffolded project.  The demos are currently pretty lame, but that will be fixed in time.
 
 ## Structuring your Demo Files
 
