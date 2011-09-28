@@ -1,3 +1,2 @@
-setInterval(function() {
-    document.write('sub demo\n');
-}, 500);
+// this is a test demo
+alert($('body').css('background-color'));

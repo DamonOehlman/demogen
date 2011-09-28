@@ -19,17 +19,7 @@
   {{#css}}
   <style type="text/css">{{this}}</style>
   {{/css}}
-  <div id="container">
-    <header>
-
-    </header>
-    <div id="main" role="main">
-
-    </div>
-    <footer>
-
-    </footer>
-  </div> <!--! end of #container -->
+  {{{ body }}}
 
 
   <!--[if lt IE 7 ]>
@@ -37,11 +27,13 @@
     <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
   <![endif]-->
 
-  <script>
-  {{{ demo }}}
-  </script>
+  <pre id="demosrc">{{{ code }}}</pre>
   <script src="_demogen/js/keymaster.min.js"></script>
   <script src="_demogen/js/jquery-1.6.2.min.js"></script>
+  <script src="_demogen/js/ace/ace.js"></script>
+  <script src="_demogen/js/ace/theme-{{ theme }}.js"></script>
+  <script src="_demogen/js/ace/mode-{{ mode }}.js"></script>
   <script src="_demogen/js/runner.js"></script>
+  <script defer="defer">{{{ code }}}</script>
 </body>
 </html>
