@@ -2,16 +2,14 @@ var vows = require('vows'),
     assert = require('assert'),
     fs = require('fs'),
     path = require('path'),
-    Generator = require('../lib/demogen').Generator,
     rePathDemogen = /^(.*?\/demogen)\/?.*$/i,
     testPath = process.cwd().replace(rePathDemogen, '$1/test/testproject'),
     testOpts = {
         path: testPath
     },
-    builder = new Generator(testOpts);
     suite = vows.describe('Demogen Tests');
     
-builder.on('ready', function() {
+require('scaffolder').create(path.resolve(__dirname, '../'), function(builder) {
     suite.addBatch({
         'Project Creation': {
             topic: function() {
@@ -38,5 +36,4 @@ builder.on('ready', function() {
     });
     
     suite.run();
-});
-
+}, testOpts);

@@ -3,7 +3,7 @@
     "description": "Clientside JS Library Demo Generator",
     "tags": ["generator", "demo"],
     "author": "Damon Oehlman <damon.oehlman@sidelab.com>",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "main": "index",
     "bin": { "demogen": "./bin/demogen" },
     
@@ -11,11 +11,9 @@
     
     "dependencies": {
         "async": "0.1.x",
-        "commander": "0.1.x",
         "handlebars": "1.x.x",
-        "out": "0.x.x",
-        "ncp": "0.1.x",
-        "underscore": "1.x.x"
+        "underscore": "1.x.x",
+        "scaffolder": "0.0.x"
     },
     
     "devDependencies": {

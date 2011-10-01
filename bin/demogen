@@ -1,36 +1,9 @@
 #!/usr/bin/env node
 
-var Generator = require('../lib/demogen').Generator,
-	fs = require('fs'),
-	path = require('path'),
-	program = require('commander');
+var path = require('path');
 	
-function progInit() {
-	program.usage('[options] action (default action = run)');
-	program.option('-p, --path [path]', 'Target output path (default to current directory)');
-	program.parse(process.argv);
-	
-	// create the deck builder
-	var gen = new Generator(program);
-	
-	// once the deck builder is ready, run the specified action
-	gen.on('ready', function() {
-		// determine the greenslide action to run
-		var action = gen[program.args] || gen.build;
-	
-		// run the action
-		action.call(gen, program, function() {
-			// done
-		});
+require('scaffolder').create(path.resolve(__dirname, '../'), function(generator, action) {
+	(action || generator.build).call(generator, function() {
+		// done
 	});
-} // progInit
-	
-fs.readFile(path.join(__dirname, '../package.json'), 'utf8', function(err, contents) {
-	if (! err) {
-		var packageData = JSON.parse(contents);
-		
-		program.version(packageData.version);
-	} // if
-
-	progInit();
 });
