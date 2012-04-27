@@ -1,0 +1,3 @@
+{
+    "includes": ["https://raw.github.com/madrobby/keymaster/master/keymaster.min.js"]
+}

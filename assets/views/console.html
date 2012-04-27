@@ -1,0 +1,58 @@
+<ul id="fakeconsole">
+</ul>
+<script>
+var reIterable = /^\[object\s(NodeList|Arguments)\]$/;
+
+function loggify(o) {
+	var output = '', asString = '';
+
+	// attempt to parse the as string value
+	try {
+		asString = typeof o == 'undefined' ? 'undefined' : o.toString();
+	}
+	catch (e) {
+	} // try..catch
+		
+	function extractElements(array) {
+		return '[' + Array.prototype.join.call(array, ', ') + ']';
+	} // extractElements
+		
+	if (reIterable.test(asString)) {
+		output = extractElements(o);
+	}
+	else if (Array.isArray(o)) {
+		output = '[' + o.join(', ') + ']';
+	}
+	else if (typeof o == 'object') {
+		output = '{<br />';
+		
+		for (var key in o) {
+			if ((! o.hasOwnProperty) || o.hasOwnProperty(key)) {
+				output += '&nbsp;&nbsp;' + key + ': \'' + o[key] + '\'<br />';
+			} // if
+		} // for
+		
+		output += '}';
+	}
+	else if (typeof o == 'string') {
+		output = '\'' + asString + '\'';
+	}
+	else {
+		output = asString;
+	} // if..else
+	
+	return output;
+} // loggify
+
+// capture logger.inspector events
+console.log = function() {
+	for (var ii = 0; ii < arguments.length; ii++) {
+		$('#fakeconsole').append('<li>' + loggify(arguments[ii]) + '</li>');
+	} // for
+};
+
+// clear eve
+eve.on('clear', function() {
+	$('#fakeconsole').html('');
+});
+</script>

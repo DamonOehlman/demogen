@@ -3,17 +3,17 @@ var vows = require('vows'),
     fs = require('fs'),
     path = require('path'),
     rePathDemogen = /^(.*?\/demogen)\/?.*$/i,
-    testPath = process.cwd().replace(rePathDemogen, '$1/test/testproject'),
     testOpts = {
-        path: testPath
+        path: __dirname
     },
-    suite = vows.describe('Demogen Tests');
+    suite = vows.describe('Demogen Tests'),
+    builder = require('scaffolder').create(path.resolve(__dirname, '../'), testOpts);
     
-require('scaffolder').create(path.resolve(__dirname, '../'), function(builder) {
+builder.once('ready', function() {
     suite.addBatch({
         'Project Creation': {
             topic: function() {
-                builder.create(testOpts, this.callback);
+                builder.create(this.callback);
             },
             
             'deck file created': function(err) {
@@ -36,4 +36,4 @@ require('scaffolder').create(path.resolve(__dirname, '../'), function(builder) {
     });
     
     suite.run();
-}, testOpts);
+});
