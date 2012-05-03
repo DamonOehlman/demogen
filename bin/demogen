@@ -1,14 +1,2 @@
 #!/usr/bin/env node
-
-var path = require('path'),
-    repl = require('climate').repl('demogen>');
-    
-// create the generator 
-repl.generator = require('../lib/generator');
-    
-// load the actions and run
-repl
-    .history()
-    .loadActions(path.resolve(__dirname, '../lib/actions'), function() {
-        repl.run(process.argv.slice(2).join(' '));
-    });
+require('scaffolder')();
