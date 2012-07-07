@@ -18,7 +18,7 @@ builder.once('ready', function() {
             
             'deck file created': function(err) {
                 assert.ok(! err);
-                assert.ok(path.existsSync(path.join(testPath, '_sources')), 'demo snippets do not exist');
+                assert.ok(fs.existsSync(path.join(testPath, '_sources')), 'demo snippets do not exist');
             }
         }
     });
