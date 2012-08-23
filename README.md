@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/DamonOehlman/demogen.png)](http://travis-ci.org/DamonOehlman/demogen)
 # demogen
 
 Demogen is the ___write your JS library demo code once___ solution.  
