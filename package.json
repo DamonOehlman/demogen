@@ -15,7 +15,7 @@
     "node": ">= 0.4.x < 0.7.0"
   },
   "dependencies": {
-    "async": "0.1.x",
+    "async": "3.2.2",
     "debug": "*",
     "handlebars": ">= 1.0.0",
     "markdown": "0.3.x",
